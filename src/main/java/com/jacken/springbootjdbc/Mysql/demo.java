@@ -2,6 +2,31 @@ package com.jacken.springbootjdbc.Mysql;
 
 import java.sql.*;
 
+/**
+ * drop PROCEDURE p_judge;
+ * -- 定义存储过程
+ *-- if else
+ * delimiter //
+ * CREATE PROCEDURE p_judge()
+ * BEGIN
+ * DECLARE number1 int;
+ * declare number2 int;
+ * set number1 =1;
+ * set number2 =2;
+ *
+ *
+ * if number1>number2 then
+ * SELECT 'true'as result ;
+ * ELSE
+ * SELECT 'false'result ;
+ * end if;
+ *
+ * END
+ * //
+ *
+ * 定义存储过程mysql very important
+ *
+ */
 public class demo {
     public static void main(String[] args) {
         getConnection();
@@ -39,3 +64,21 @@ public class demo {
         return conn; //返回数据库连接
     }
 }
+
+/**
+ * delimiter //
+ * CREATE PROCEDURE p_judge()
+ * BEGIN
+ * DECLARE number1 int;
+ * set number1 =2;
+ * case number1
+ * when 1 then
+ * SELECT '我是1' as result ;
+ * when 2 then
+ * SELECT '我是2' as result;
+ * end case;
+ * END
+ * //
+ *
+ * case 相当于java中的switch  case
+ */
